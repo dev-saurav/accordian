@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Accordian from './components/Accordian';
 import Search from './components/Search';
-
+import Dropdown from './components/Dropdown';
 const items = [
     {
         title: "What is React?",
@@ -16,12 +16,27 @@ const items = [
         content: "React is amazing js library"
     }
 ]
-
+const options = [
+    {
+        label: "Red",
+        value: "red"
+    },
+    {
+        label: "Blue",
+        value: "blue"
+    },
+    {
+        label: "Green",
+        value: "green"
+    }
+]
 const App = () => {
+    const [selected, setSelected] = useState(options[0]);
     return (
         <div>
             {/* <Accordian items={items} /> */}
             {/* <Search /> */}
+            {/* <Dropdown options={options} selected={selected} onSelectedChanged={setSelected} /> */}
         </div>
     )
 }
