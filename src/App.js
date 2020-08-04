@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Accordian from './components/Accordian';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
+import Translate from './components/Translate';
 const items = [
     {
         title: "What is React?",
@@ -37,6 +38,10 @@ const App = () => {
             {/* <Accordian items={items} /> */}
             {/* <Search /> */}
             {/* <Dropdown options={options} selected={selected} onSelectedChanged={setSelected} /> */}
+            {/* <div style={{ color: selected.value }}>
+                <h1>Color will change</h1>
+            </div> */}
+            <Translate />
         </div>
     )
 }
