@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Accordian = ({ items }) => {
+    //state
+    const [chosenIndex, setChosenIndex] = useState(null);
 
     //on click of title
     const onTitleClick = (index) => {
-        console.log("title clicked", index)
+        console.log("title clicked", index);
+        setChosenIndex(index);
     }
 
     const renderedList = items.map((item, index) => (
@@ -21,6 +24,7 @@ const Accordian = ({ items }) => {
     return (
         <div className="ui styled accordion">
             {renderedList}
+            {chosenIndex}
         </div>
     )
 }
