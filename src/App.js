@@ -3,6 +3,8 @@ import Accordian from './components/Accordian';
 import Search from './components/Search';
 import Dropdown from './components/Dropdown';
 import Translate from './components/Translate';
+import Route from './components/Route';
+import Header from './components/Header';
 const items = [
     {
         title: "What is React?",
@@ -35,13 +37,24 @@ const App = () => {
     const [selected, setSelected] = useState(options[0]);
     return (
         <div>
-            {/* <Accordian items={items} /> */}
-            {/* <Search /> */}
-            {/* <Dropdown options={options} selected={selected} onSelectedChanged={setSelected} /> */}
-            {/* <div style={{ color: selected.value }}>
-                <h1>Color will change</h1>
-            </div> */}
-            <Translate />
+            <Header />
+            <Route path="/">
+                <Accordian items={items} />
+            </Route>
+            <Route path="/list">
+                <Search />
+            </Route>
+            <Route path="/translate">
+                <Translate />
+            </Route>
+            <Route path="/dropdown">
+                <Dropdown
+                    label="Select a color"
+                    options={options}
+                    selected={selected}
+                    onSelectedChanged={setSelected}
+                />
+            </Route>
         </div>
     )
 }
